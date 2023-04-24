@@ -66,8 +66,8 @@ alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
-alias cat='batcat'
-alias catc='batcat -l ruby'
+alias cat='bat'
+alias catc='bat -l ruby'
 
 alias target='/home/hacker/.config/polybar/scripts/settarget.sh'
 alias ip1='sh /home/hacker/.config/polybar/scripts/set-device.sh wlp3s0f3u3' 
@@ -78,6 +78,7 @@ alias p='proxychains'
 alias pf='proxychains firefox'
 alias zr='source ~/.zshrc'
 alias vim='nvim'
+alias vm-on='systemctl start libvirtd.service'
 
 # Plugins
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -88,14 +89,14 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 #PROMPT='%B%F{cyan}%~ %(?.%B%F{green}✓.%F{red}✕)%f%b 
 #%B%F{green}%f%b ' 
 
-PROMPT='%B%F{cyan}%~  
+PROMPT='%(?.%B%F{green}✓.%F{red}✕)%f%b %B%F{cyan}%~ 
 %B%F{green}%f%b ' 
 
-#precmd() { print "" }
+precmd() {}
 
 del-prompt-accept-line() {
     OLD_PROMPT="$PROMPT"
-    PROMPT="%(?.%B%F{green}.%F{red})%f%b "
+    PROMPT="%B%F{4}%f%b "
     zle reset-prompt
     PROMPT="$OLD_PROMPT"
     zle accept-line
