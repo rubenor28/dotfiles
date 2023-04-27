@@ -35,6 +35,15 @@ packer.startup(function()
     }
 }
 
-   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+
+    -- lualine
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    
+    use {'jiangmiao/auto-pairs'}
+    use {'ap/vim-buftabline'}
 end)
 

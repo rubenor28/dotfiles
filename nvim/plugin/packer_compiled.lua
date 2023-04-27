@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/rubenor/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/home/rubenor/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    url = "https://github.com/jiangmiao/auto-pairs"
+  },
   catppuccin = {
     loaded = true,
     path = "/home/rubenor/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -93,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rubenor/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/rubenor/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -124,6 +134,12 @@ _G.packer_plugins = {
     path = "/home/rubenor/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/rubenor/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/rubenor/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -133,6 +149,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rubenor/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-buftabline"] = {
+    loaded = true,
+    path = "/home/rubenor/.local/share/nvim/site/pack/packer/start/vim-buftabline",
+    url = "https://github.com/ap/vim-buftabline"
   }
 }
 
