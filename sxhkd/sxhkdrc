@@ -13,10 +13,12 @@ super + r
 
 # Apps
 alt + f
-	firefox
+    librewolf
+#	firefox
 #	brave
 alt + shift + f
-	proxychains firefox
+    proxychains librewolf
+#	proxychains firefox
 alt + b
 	torbrowser-launcher
 
@@ -24,7 +26,7 @@ alt + n
 	kitty --class scratchpad -e nvim
 #	alacritty --class scratchpad -e nvim
 
-alt + h
+alt + shift + h
 	kitty --class scratchpad -e htop
 #	alacritty --class scratchpad -e htop
 

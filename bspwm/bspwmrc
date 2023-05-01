@@ -29,8 +29,7 @@ lxsession &
 setxkbmap -layout latam &
 timedatectl set-timezone America/Mexico_City &
 timedatectl set-ntp TRUE &
-feh --bg-fill ~/wallpapers/normal/23.jpg &
 picom -b &
 # picom &
-# nitrogen --restore &
+nitrogen --restore &
 $HOME/.config/polybar/launch.sh &

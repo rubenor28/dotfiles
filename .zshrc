@@ -79,6 +79,8 @@ alias pf='proxychains firefox'
 alias zr='source ~/.zshrc'
 alias vim='nvim'
 alias vm-on='systemctl start libvirtd.service'
+alias xg='startx ~/.config/X11/bspwm'
+alias v='nvim'
 
 # Plugins
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

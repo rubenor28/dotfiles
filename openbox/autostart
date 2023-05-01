@@ -4,5 +4,6 @@ pcmanfm --desktop &
 setxkbmap -layout latam &
 timedatectl set-timezone America/Mexico_City &
 timedatectl set-ntp TRUE &
-nitrogen --restore &
-openbox
+picom -b &
+feh --bg-fill ~/wallpapers/normal/12.png &
+

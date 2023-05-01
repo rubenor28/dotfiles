@@ -27,7 +27,7 @@ vim.api.nvim_set_keymap('n', '<C-Right>', '<C-w>l', {noremap = true, silent = tr
 vim.api.nvim_set_keymap('n', '<C-Left>', '<C-w>h', {noremap = true, silent = true})
 
 -- Change Buffers
-vim.api.nvim_set_keymap('n', '<tab>', ':bnext', {noremap = true})
+vim.api.nvim_set_keymap('n', '<tab>', ':bnext<CR>', {noremap = true})
 
 -- Not use esc
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', {noremap = true})
