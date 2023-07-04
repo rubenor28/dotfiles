@@ -15,8 +15,9 @@ polybar files &
 polybar pulse & 
 polybar cpu &
 polybar ram &
+#polybar net1 &
 #polybar ip-main &
-polybar ip-htb &
-polybar ip-target &
+#polybar ip-htb &
+#polybar ip-target &
 
 echo "Polybar launched..." 

@@ -1,8 +1,8 @@
 # ~/.zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
-
+ 
 setopt autocd              # change directory just by typing its name
-#setopt correct            # auto correct mistakes
+setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
 setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
 setopt nonomatch           # hide error message if there is no match for the pattern
@@ -16,8 +16,8 @@ WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 PROMPT_EOL_MARK=""
 
 # configure key keybindings
-bindkey -e                                        # emacs key bindings
-bindkey ' ' magic-space                           # do history expansion on space
+#bindkey -e                                        # emacs key bindings
+#bindkey ' ' magic-space                           # do history expansion on space
 bindkey '^U' backward-kill-line                   # ctrl + U
 bindkey '^[[3;5~' kill-word                       # ctrl + Supr
 bindkey '^[[3~' delete-char                       # delete
@@ -32,19 +32,7 @@ bindkey '^[[Z' undo                               # shift + tab undo last action
 # enable completion features
 autoload -Uz compinit
 compinit -d ~/.cache/zcompdump
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*' rehash true
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # History configurations
 HISTFILE=~/.zsh_history
@@ -67,15 +55,7 @@ alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias cat='bat'
-alias catc='bat -l ruby'
 
-alias target='/home/hacker/.config/polybar/scripts/settarget.sh'
-alias ip1='sh /home/hacker/.config/polybar/scripts/set-device.sh wlp3s0f3u3' 
-alias ip2='sh /home/hacker/.config/polybar/scripts/set-device.sh wlo1' 
-alias ip3='sh /home/hacker/.config/polybar/scripts/set-device.sh eno0' 
-
-alias p='proxychains'
-alias pf='proxychains firefox'
 alias zr='source ~/.zshrc'
 alias vim='nvim'
 alias vm-on='systemctl start libvirtd.service'
@@ -85,14 +65,18 @@ alias v='nvim'
 # Plugins
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+source ~/.zsh/sudo/sudo.plugin.zsh
 
 # Promt
 #PROMPT='%B%F{cyan}%~ %(?.%B%F{green}✓.%F{red}✕)%f%b 
-#%B%F{green}%f%b ' 
+#%B%F{green}%f%b ' 
 
-PROMPT='%(?.%B%F{green}✓.%F{red}✕)%f%b %B%F{cyan}%~ 
-%B%F{green}%f%b ' 
+#PROMPT='%(?.%B%F{green}✓.%F{red}✕)%f%b %B%F{cyan}%~
+#%F{green}%B$(echo -e "\e[5m\e[0m")%f '
+
+PROMPT='%B%F{cyan}%~
+%F{green}%B%b%f '
+# %F{green}%B$(echo -e "\e[5m\e[0m")%b%f'
 
 precmd() {}
 
