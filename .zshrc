@@ -57,7 +57,7 @@ alias ls='lsd --group-dirs=first'
 alias cat='bat'
 
 alias zr='source ~/.zshrc'
-alias vim='nvim'
+
 alias vm-on='systemctl start libvirtd.service'
 alias xg='startx ~/.config/X11/bspwm'
 alias v='nvim'
@@ -74,7 +74,7 @@ source ~/.zsh/sudo/sudo.plugin.zsh
 #PROMPT='%(?.%B%F{green}✓.%F{red}✕)%f%b %B%F{cyan}%~
 #%F{green}%B$(echo -e "\e[5m\e[0m")%f '
 
-PROMPT='%B%F{cyan}%~
+PROMPT='%B%F{cyan}%~ %B%F{5}%f%b
 %F{green}%B%b%f '
 # %F{green}%B$(echo -e "\e[5m\e[0m")%b%f'
 
