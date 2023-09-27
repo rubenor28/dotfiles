@@ -8,6 +8,7 @@ lsp.ensure_installed({
   'clangd',
   'pyright',
   'marksman',
+  'texlab',
 })
 
 -- Fix Undefined global 'vim'

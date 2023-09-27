@@ -25,11 +25,16 @@ bspc rule -a Screenkey manage=off
 # dunst &
 # $HOME/.config/bspwm/lowbattery &
 # nm-applet &
-lxsession &
+# lxsession &
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 setxkbmap -layout latam &
 timedatectl set-timezone America/Mexico_City &
 timedatectl set-ntp TRUE &
 picom -b &
-# picom &
+#xrandr --output eDP --off --output HDMI-A-0 --mode 1366x768 --pos 0x0 --rotate normal
 nitrogen --restore &
 $HOME/.config/polybar/launch.sh &
+
+#For left handed mouse and touchpad with xinput
+#xinput set-prop $(xinput | grep -i "usb optical mouse" | awk -F'id=' '{print $2}' | awk '{print $1}') 'libinput Left Handed Enabled' 1 &
+#xinput set-prop $(xinput | grep -i "etps/2 elantech touchpad" | awk -F'id=' '{print $2}' | awk '{print $1}') 'libinput Left Handed Enabled' 1 &

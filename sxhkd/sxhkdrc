@@ -4,8 +4,8 @@ ctrl + super + alt + k
 
 # terminal emulator
 super + Return
-	kitty
-#	alacritty
+#	kitty
+	alacritty
 # program launcher
 super + r
 #	/home/rubenor/.config/rofi/launchers/type-6/launcher.sh
@@ -104,6 +104,9 @@ super + @space
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev,next}.local
+
 super + ctrl + {Left,Right}
 	bspc desktop -f {prev,next}.local
 

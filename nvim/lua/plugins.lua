@@ -45,5 +45,8 @@ packer.startup(function()
     
     use {'jiangmiao/auto-pairs'}
     use {'ap/vim-buftabline'}
+
+    --gruvbox colorscheme
+    use {'ellisonleao/gruvbox.nvim'}
 end)
 
