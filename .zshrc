@@ -67,18 +67,48 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/sudo/sudo.plugin.zsh
 
+PROMPT='%(?.%B%F{green}✓.%F{red}✕)%f%b %B%F{cyan}%~%n%F{green}%B%b%f '
+
+function preexec() {
+  timer=$(($(date +%s%0N)/1000000))
+}
+
+function precmd() {
+  if [ $timer ]; then
+    now=$(($(date +%s%0N)/1000000))
+    elapsed=$(($now-$timer))
+
+    # Calcular minutos, segundos y milisegundos
+    minutes=$((elapsed / 60000))
+    seconds=$(( (elapsed % 60000) / 1000 ))
+    milliseconds=$((elapsed % 1000))
+
+    # Obtener el nombre de la rama actual de Git (si estás en un repositorio)
+    git_branch=""
+    if [ -d .git ] || git rev-parse --is-inside-work-tree &>/dev/null; then
+      git_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+    fi
+
+    export RPROMPT="%F{cyan}󱑆 ${minutes}:${seconds}s %F{red}󰊢 ${git_branch}% %{$reset_color%}"
+
+    unset timer
+  fi
+}
+
 # Promt
 #PROMPT='%B%F{cyan}%~ %(?.%B%F{green}✓.%F{red}✕)%f%b 
 #%B%F{green}%f%b ' 
 
-#PROMPT='%(?.%B%F{green}✓.%F{red}✕)%f%b %B%F{cyan}%~
-#%F{green}%B$(echo -e "\e[5m\e[0m")%f '
-
-PROMPT='%B%F{cyan}%~ %B%F{5}%f%b
+PROMPT='%(?.%B%F{green}✓.%F{red}✕)%f%b %B%F{cyan}%~
 %F{green}%B%b%f '
+
+#PROMPT='%B%F{cyan}%~ %B%F{5}%f%b
+#%(?.%B%F{green} .%F{red} )%f%b'
+
+#%F{green}%B%b%f '
 # %F{green}%B$(echo -e "\e[5m\e[0m")%b%f'
 
-precmd() {}
+#precmd() {}
 
 del-prompt-accept-line() {
     OLD_PROMPT="$PROMPT"
