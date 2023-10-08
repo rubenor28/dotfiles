@@ -9,4 +9,4 @@ require('config.catppuccin')
 require('config.telescope')
 require('config.lualine')
 require('config.gruvbox')
-
+require('config.nightfox')

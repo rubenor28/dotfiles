@@ -48,5 +48,14 @@ packer.startup(function()
 
     --gruvbox colorscheme
     use {'ellisonleao/gruvbox.nvim'}
+
+    --Vim-Cmake
+    use {'cdelledonne/vim-cmake'}
+
+    --sonokai colorsheme
+    use {'sainnhe/sonokai'}
+
+    --Nightfox theme
+    use {'EdenEast/nightfox.nvim'}
 end)
 

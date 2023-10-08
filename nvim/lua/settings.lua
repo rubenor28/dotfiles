@@ -10,3 +10,5 @@ vim.o.showmode = false
 
 vim.cmd('set clipboard+=unnamedplus')    -- Copiar al portapapeles con xclip
 vim.cmd('set guioptions+=a')             -- Pegar desde el portapapeles con xclip
+
+vim.cmd("colorscheme nightfox")
