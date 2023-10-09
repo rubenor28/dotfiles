@@ -4,14 +4,24 @@
 local packer = require('packer')
 packer.startup(function()
 
+    --telescope
     use {
 	    'nvim-telescope/telescope.nvim', tag = '0.1.0',
 	    -- or                            , branch = '0.1.x',
 	    requires = { {'nvim-lua/plenary.nvim'} }
     }
+    use{'nvim-lua/plenary.nvim'}
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
-    use {'preservim/nerdtree'} -- nerdtree
-    use { "catppuccin/nvim", as = "catppuccin" } -- catppucci colorscheme
+    --install:
+    --ripgrep
+    --
+    
+    -- nerdtree
+    use {'preservim/nerdtree'}
+    
+    -- catppucci colorscheme
+    use { "catppuccin/nvim", as = "catppuccin" } 
 
 -- LSP
     use {
@@ -57,5 +67,9 @@ packer.startup(function()
 
     --Nightfox theme
     use {'EdenEast/nightfox.nvim'}
+
+    --nvim icons
+    -- use {'nvim-tree/nvim-web-devicons'}
+    use {'ryanoasis/vim-devicons'}
 end)
 
