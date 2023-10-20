@@ -71,5 +71,11 @@ packer.startup(function()
     --nvim icons
     -- use {'nvim-tree/nvim-web-devicons'}
     use {'ryanoasis/vim-devicons'}
+
+    --colorizer
+    use {'norcalli/nvim-colorizer.lua'}
+
+    -- ident-blackline
+    use {'lukas-reineke/indent-blankline.nvim'}
 end)
 
