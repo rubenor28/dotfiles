@@ -4,8 +4,8 @@ ctrl + super + alt + k
 
 # terminal emulator
 super + Return
-#	kitty
-	alacritty
+	kitty
+#	alacritty
 # program launcher
 super + r
 #	/home/rubenor/.config/rofi/launchers/type-6/launcher.sh
@@ -13,14 +13,9 @@ super + r
 
 # Apps
 alt + f
-    librewolf
+    chromium
 #	firefox
 #	brave
-alt + shift + f
-    proxychains librewolf
-#	proxychains firefox
-alt + b
-	torbrowser-launcher
 
 alt + n 
 	kitty --class scratchpad -e nvim

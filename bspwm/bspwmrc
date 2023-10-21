@@ -6,7 +6,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 bspc monitor HDMI-A-0 -d I II III IV V VI
 
 bspc config border_width 2
-bspc config focused_border_color \#98fffd
+bspc config focused_border_color \#ff6578
 bspc config normal_border_color \#181a29
 bspc config window_gap          10
 
