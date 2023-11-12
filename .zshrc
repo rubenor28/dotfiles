@@ -45,6 +45,7 @@ setopt hist_verify            # show command with history expansion to user befo
 #setopt share_history         # share command history data
 
 # force zsh to show the complete history
+alias v='nvim'
 alias history="history 0"
 
 # Alias
@@ -55,6 +56,8 @@ alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias cat='bat'
+
+alias gs='git status -s'
 
 alias zr='source ~/.zshrc'
 
@@ -84,12 +87,17 @@ function precmd() {
     milliseconds=$((elapsed % 1000))
 
     # Obtener el nombre de la rama actual de Git (si estás en un repositorio)
+# Obtener el nombre de la rama actual de Git (si estás en un repositorio)
     git_branch=""
-    if [ -d .git ] || git rev-parse --is-inside-work-tree &>/dev/null; then
+    if git status &>/dev/null; then
       git_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
     fi
 
-    export RPROMPT="%F{cyan}󱑆 ${minutes}:${seconds}s %F{red}󰊢 ${git_branch}% %{$reset_color%}"
+    if [ -n "$git_branch" ]; then
+      export RPROMPT="%F{cyan}󱑆 ${minutes}:${seconds}s %F{red}󰊢 ${git_branch}% %{$reset_color%}"
+    else
+      export RPROMPT="%F{cyan}󱑆 ${minutes}:${seconds}s %{$reset_color%}"
+    fi
 
     unset timer
   fi

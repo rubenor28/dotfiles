@@ -14,6 +14,8 @@ vim.api.nvim_set_keymap('n', '<M-k>', ':resize -2<CR>', { noremap = true, silent
 vim.api.nvim_set_keymap('n', '<M-j>', ':resize +2<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<M-l>', ':vertical resize -2<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<M-h>', ':vertical resize +2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<M-z>', ':vsplit<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<M-Z>', ':split<CR>', { noremap = true, silent = true })
 
 -- Window navigation
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
