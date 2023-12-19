@@ -37,6 +37,13 @@ vim.api.nvim_set_keymap('n', '<M-Q>', ':bufdo bdelete<CR>', { noremap = true })
 -- Not use esc
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true })
 vim.api.nvim_set_keymap('i', 'kj', '<Esc>', { noremap = true })
+-- Not use ctl+\ + ctr+n on a terminal(?)
+vim.api.nvim_set_keymap('t', 'jk', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('t', 'kj', '<C-\\><C-n>', { noremap = true })
+
+-- Open split terminal
+vim.api.nvim_set_keymap('n', '<leader>tv', ':botright vnew <Bar> :terminal<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>th', ':botright new <Bar> :terminal<CR>', { noremap = true })
 
 -- Format with lsp
 vim.api.nvim_set_keymap('n', '<S-f>', ':LspZeroFormat<CR>', { noremap = true, silent = true })

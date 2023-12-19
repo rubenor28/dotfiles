@@ -77,5 +77,13 @@ packer.startup(function()
 
     -- ident-blackline
     use {'lukas-reineke/indent-blankline.nvim'}
+
+    -- Coc
+    use{
+        'neoclide/coc.nvim',
+        branch = 'release',
+    }
+    -- Omnisharp C# support
+    -- use {'OmniSharp/omnisharp-vim'}
 end)
 
