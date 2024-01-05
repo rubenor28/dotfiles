@@ -85,5 +85,7 @@ packer.startup(function()
     }
     -- Omnisharp C# support
     -- use {'OmniSharp/omnisharp-vim'}
+
+    use {'bluz71/vim-nightfly-colors',  as = "nightfly" }
 end)
 
