@@ -2,8 +2,16 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-#bspc monitor HDMI-A-0 -d I II III IV V VI VII VIII IX X
-bspc monitor HDMI-A-0 -d I II III IV V VI
+if [[ $(xrandr -q | grep  "HDMI-1 connected") ]] then
+    xrandr --newmode "1920x1080_60.00" 148.50 1920 2008 2052 2200 1080 1084 1089 1125 +HSync +VSync
+    xrandr --addmode HDMI-1 1920x1080_60.00
+    xrandr --output LVDS-1 --mode 1366x768 --pos 0x312 --rotate normal --output VGA-1 --off --output HDMI-1 --primary --mode 1920x1080_60.00 --pos 1366x0 --rotate normal --output DP-1 --off --output VGA-1-2 --off
+else 
+    xrandr --output LVDS-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output VGA-1 --off
+fi
+
+bspc monitor HDMI-1 -d I II III IV V
+bspc monitor LVDS-1 -d VI VII VIII IX X
 
 bspc config border_width 2
 bspc config focused_border_color \#ff6578
@@ -21,9 +29,9 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 #!/bin/bash
-xrandr --newmode "1920x1080_60.00" 148.50 1920 2008 2052 2200 1080 1084 1089 1125 +HSync +VSync
-xrandr --addmode HDMI-A-0 1920x1080_60.00
-xrandr --output HDMI-A-0 --mode 1920x1080_60.00 --pos 0x0
+#xrandr --newmode "1920x1080_60.00" 148.50 1920 2008 2052 2200 1080 1084 1089 1125 +HSync +VSync
+#xrandr --addmode HDMI-1 1920x1080_60.00
+#xrandr --output HDMI-1 --mode 1920x1080_60.00 --pos 0x0
 
 # Autostart
 # dunst &
