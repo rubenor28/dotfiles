@@ -45,21 +45,25 @@ setopt hist_verify            # show command with history expansion to user befo
 #setopt share_history         # share command history data
 
 # force zsh to show the complete history
-alias v='nvim'
 alias history="history 0"
 
 # Alias
 # alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias renombrar="~/workspace/renombrar_canciones_rust/target/release/renombrar_canciones_rust"
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
-alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
-alias cat='bat'
+alias lla='lsd -lha --group-dirs=first'
+alias cat='bat --style=plain --paging=never'
+alias grep="grep --color=auto"
+alias tree="exa -T --icons"
 
 alias gs='git status -s'
 
 alias zr='source ~/.zshrc'
+
+alias dnf='dnf5'
 
 alias vm-on='systemctl start libvirtd.service'
 alias xg='startx ~/.config/X11/bspwm'
@@ -70,82 +74,8 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/sudo/sudo.plugin.zsh
 
-PROMPT='%(?.%B%F{green}✓.%F{red}✕)%f%b %B%F{cyan}%~%n%F{green}%B%b%f '
+# Starfish prompteval 
+eval "$(starship init zsh)"
 
-function preexec() {
-  timer=$(($(date +%s%0N)/1000000))
-}
-
-function precmd() {
-  if [ $timer ]; then
-    now=$(($(date +%s%0N)/1000000))
-    elapsed=$(($now-$timer))
-
-    # Calcular minutos, segundos y milisegundos
-    minutes=$((elapsed / 60000))
-    seconds=$(( (elapsed % 60000) / 1000 ))
-    milliseconds=$((elapsed % 1000))
-
-    # Obtener el nombre de la rama actual de Git (si estás en un repositorio)
-# Obtener el nombre de la rama actual de Git (si estás en un repositorio)
-    git_branch=""
-    if git status &>/dev/null; then
-      git_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-    fi
-
-    if [ -n "$git_branch" ]; then
-      export RPROMPT="%F{cyan}󱑆 ${minutes}:${seconds}s %F{red}󰊢 ${git_branch}% %{$reset_color%}"
-    else
-      export RPROMPT="%F{cyan}󱑆 ${minutes}:${seconds}s %{$reset_color%}"
-    fi
-
-    unset timer
-  fi
-}
-
-# Promt
-#PROMPT='%B%F{cyan}%~ %(?.%B%F{green}✓.%F{red}✕)%f%b 
-#%B%F{green}%f%b ' 
-
-PROMPT='%(?.%B%F{green}✓.%F{red}✕)%f%b %B%F{cyan}%~
-%F{green}%B%b%f '
-
-#PROMPT='%B%F{cyan}%~ %B%F{5}%f%b
-#%(?.%B%F{green} .%F{red} )%f%b'
-
-#%F{green}%B%b%f '
-# %F{green}%B$(echo -e "\e[5m\e[0m")%b%f'
-
-#precmd() {}
-
-del-prompt-accept-line() {
-    OLD_PROMPT="$PROMPT"
-    PROMPT="%B%F{4}%f%b "
-    zle reset-prompt
-    PROMPT="$OLD_PROMPT"
-    zle accept-line
-}
-
-zle -N del-prompt-accept-line
-bindkey "^M" del-prompt-accept-line
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Utilidades
-mkt () {
-	mkdir {nmap,content,exploits}
-}
-
-extractPorts () {
-	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-	service="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $4}' FS='/' | xargs | tr ' ' ',')"
-	ip_address="$(cat $1 | grep -oP '^Host: .* \(\)' | head -n 1 | awk '{print $2}')"
-	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
-	echo -e "\t[*] IP Address: $ip_address" >> extractPorts.tmp
-	echo -e "\t[*] Open Ports: $ports" >> extractPorts.tmp
-	echo -e "\t[*] Service: $service\n" >> extractPorts.tmp
-	echo $ports | tr -d '\n' | xclip -sel clip
-	echo -e "[*] Ports copied to clipboard\n" >> extractPorts.tmp
-	batcat extractPorts.tmp
-	rm extractPorts.tmp
-}
