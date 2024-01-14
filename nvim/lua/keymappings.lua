@@ -47,3 +47,7 @@ vim.api.nvim_set_keymap('n', '<leader>th', ':botright new <Bar> :terminal<CR>', 
 
 -- Format with lsp
 vim.api.nvim_set_keymap('n', '<S-f>', ':LspZeroFormat<CR>', { noremap = true, silent = true })
+
+-- Debugger, needs nvim-dap
+vim.api.nvim_set_keymap('n', '<leader>db', ':DapToggleBreakpoint <CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>dr', ':DapContinue <CR>', { noremap = true })

@@ -20,11 +20,15 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+#!/bin/bash
+xrandr --newmode "1920x1080_60.00" 148.50 1920 2008 2052 2200 1080 1084 1089 1125 +HSync +VSync
+xrandr --addmode HDMI-A-0 1920x1080_60.00
+xrandr --output HDMI-A-0 --mode 1920x1080_60.00 --pos 0x0
 
 # Autostart
 # dunst &
 # $HOME/.config/bspwm/lowbattery &
-# nm-applet &
+nm-applet &
 # lxsession &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 setxkbmap -layout latam &
@@ -32,6 +36,7 @@ timedatectl set-timezone America/Mexico_City &
 timedatectl set-ntp TRUE &
 picom -b &
 #xrandr --output eDP --off --output HDMI-A-0 --mode 1366x768 --pos 0x0 --rotate normal
+parcellite &
 nitrogen --restore &
 $HOME/.config/polybar/launch.sh &
 

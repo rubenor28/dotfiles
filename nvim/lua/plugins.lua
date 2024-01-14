@@ -13,10 +13,6 @@ packer.startup(function()
     use{'nvim-lua/plenary.nvim'}
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
-    --install:
-    --ripgrep
-    --
-    
     -- nerdtree
     use {'preservim/nerdtree'}
     
@@ -87,5 +83,14 @@ packer.startup(function()
     -- use {'OmniSharp/omnisharp-vim'}
 
     use {'bluz71/vim-nightfly-colors',  as = "nightfly" }
+
+    use {'folke/tokyonight.nvim'}
+
+    -- Debuger
+    use {'mfussenegger/nvim-dap'}
+
+    -- Debugger ui
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use {"folke/neodev.nvim"}
 end)
 

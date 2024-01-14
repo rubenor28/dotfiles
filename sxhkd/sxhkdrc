@@ -4,7 +4,7 @@ ctrl + super + alt + k
 
 # terminal emulator
 super + Return
-	kitty
+ 	kitty
 #	alacritty
 # program launcher
 super + r
@@ -29,7 +29,7 @@ alt + r
 	kitty --class scratchpad -e ranger
 #	alacritty --class scratchpad -e ranger
 
-alt + m
+#alt + m
 	kitty --class scratchpad -e ncmpcpp
 #	alacritty --class scratchpad -e ncmpcpp
 

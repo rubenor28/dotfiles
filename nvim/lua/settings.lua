@@ -12,7 +12,7 @@ vim.cmd('set clipboard+=unnamedplus')    -- Copiar al portapapeles con xclip
 vim.cmd('set guioptions+=a')             -- Pegar desde el portapapeles con xclip
 
 vim.cmd("set background=dark")
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme tokyonight-night")
 vim.cmd("set termguicolors")
 
 vim.opt.list = true -- enable the below listchars

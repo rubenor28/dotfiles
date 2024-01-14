@@ -5,7 +5,10 @@ lsp.preset("recommended")
 lsp.ensure_installed({
     "clangd",
     "jdtls",
-    "omnisharp",
+    "omnisharp", -- need .net installed
+    -- "codelldb", -- C & C++ debuger needs nvim-dap
+    -- rust-analyzer,
+
 })
 
 -- Fix Undefined global 'vim'

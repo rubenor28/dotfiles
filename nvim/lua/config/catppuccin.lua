@@ -99,20 +99,20 @@ return function()
 			---@param cp palette
 			all = function(cp)
 				return {
-					-- For base configs
-					NormalFloat = { fg = cp.text, bg = transparent_background and cp.none or cp.mantle },
-					FloatBorder = {
-						fg = transparent_background and cp.blue or cp.mantle,
-						bg = transparent_background and cp.none or cp.mantle,
-					},
-					CursorLineNr = { fg = cp.green },
+-- Para configuraciones base
+            NormalFloat = { fg = cp.text, bg = transparent_background and cp.none or cp.mantle },
+            FloatBorder = {
+                fg = transparent_background and cp.blue or cp.mantle,
+                bg = transparent_background and cp.none or cp.mantle,
+            },
+            CursorLineNr = { fg = cp.green },
 
-					-- For native lsp configs
-					DiagnosticVirtualTextError = { bg = cp.none },
-					DiagnosticVirtualTextWarn = { bg = cp.none },
-					DiagnosticVirtualTextInfo = { bg = cp.none },
-					DiagnosticVirtualTextHint = { bg = cp.none },
-					LspInfoBorder = { link = "FloatBorder" },
+            -- Actualiza estas líneas para hacer los colores más vívidos
+            DiagnosticVirtualTextError = { bg = cp.none, fg = cp.red_bright },
+            DiagnosticVirtualTextWarn = { bg = cp.none, fg = cp.yellow_bright },
+            DiagnosticVirtualTextInfo = { bg = cp.none, fg = cp.blue_bright },
+            DiagnosticVirtualTextHint = { bg = cp.none, fg = cp.purple_bright },
+            LspInfoBorder = { link = "FloatBorder" },
 
 					-- For mason.nvim
 					MasonNormal = { link = "NormalFloat" },
