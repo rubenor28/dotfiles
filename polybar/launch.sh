@@ -8,6 +8,7 @@ killall -q polybar
 
 # Launch Polybar, using default config location ~/.config/polybar/config.ini
 # polybar gruvbox-bar 2>&1 | tee -a /tmp/polybar.log & disown
-polybar mainbar
+polybar mainbar &
+polybar secondbar &
 
 echo "Polybar launched..." 
