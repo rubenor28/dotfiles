@@ -1,5 +1,4 @@
 -- leader
-vim.g.mapleader = ' '
 
 -- Save
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })

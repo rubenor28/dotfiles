@@ -1,15 +1,2 @@
-require('settings')
-require('keymappings')
-require('plugins')
+require('config')
 
--- Plugins Config
-require('config.neodev')
-require('config.dap')
-require('config.lsp')
-require('config.telescope')
-require('config.lualine')
-require('config.colorizer')
-require('config.identBlackline')
-require('config.nt')
-require('config.tokyonight')
-require('config.noice')

@@ -1,3 +1,4 @@
+vim.g.mapleader = ' '
 -- Basic settings
 vim.opt.syntax = 'on'         -- Enable syntax highlighting
 vim.opt.number = true         -- Show line numbers
@@ -12,7 +13,6 @@ vim.cmd('set clipboard+=unnamedplus') -- Copiar al portapapeles con xclip
 vim.cmd('set guioptions+=a')          -- Pegar desde el portapapeles con xclip
 
 vim.cmd("set background=dark")
-vim.cmd("colorscheme tokyonight-night")
 vim.cmd("set termguicolors")
 
 vim.opt.list = true -- enable the below listchars
@@ -23,3 +23,4 @@ vim.opt.listchars = {
     extends = '»',
     precedes = '«',
 }
+
