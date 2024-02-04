@@ -6,6 +6,8 @@ disabled = false
 
 [directory]
 style = "bold blue"
+home_symbol = " "
+truncate_to_repo = true
 
 [cmd_duration]
 format = "[$duration]($style) "
@@ -60,19 +62,19 @@ symbol = " "
 disabled = true
 
 [localip]
+disabled = false
 ssh_only = false
 format = '[$localipv4](bold cyan) '
-disabled = false
 
 [username]
+disabled = false
 style_user = 'green bold'
 style_root = 'red bold'
 format = '[$user]($style) '
-disabled = false
 show_always = true
 
 [sudo]
+disabled = false
 style = 'bold yellow'
 format = '[$symbol]($style)'
 symbol = '󰈸 '
-disabled = false
