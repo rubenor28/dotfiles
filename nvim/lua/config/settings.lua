@@ -15,6 +15,15 @@ vim.cmd('set guioptions+=a')          -- Pegar desde el portapapeles con xclip
 vim.cmd("set background=dark")
 vim.cmd("set termguicolors")
 
+-- Desactivar la línea de estado del buffer en la esquina superior izquierda
+vim.cmd([[set noshowmode]])
+
+-- Ocultar el nombre del archivo en la esquina superior izquierda
+vim.cmd([[set shortmess+=F]])
+
+-- Opcional: Si también deseas ocultar el nombre del archivo en la pestaña
+vim.cmd([[set shortmess+=T]])
+
 vim.opt.list = true -- enable the below listchars
 vim.opt.listchars = {
     tab = '󰧟󰧟',
