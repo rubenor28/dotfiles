@@ -24,6 +24,11 @@ vim.cmd([[set shortmess+=F]])
 -- Opcional: Si también deseas ocultar el nombre del archivo en la pestaña
 vim.cmd([[set shortmess+=T]])
 
+-- Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config({
+  virtual_text = false,
+})
+
 vim.opt.list = true -- enable the below listchars
 vim.opt.listchars = {
     tab = '󰧟󰧟',

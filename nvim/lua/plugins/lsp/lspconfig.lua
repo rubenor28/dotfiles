@@ -158,12 +158,22 @@ return {
       },
     })
 
-    -- configure rust server
+    -- configure rust analyzer
     lspconfig["rust_analyzer"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = {
+            allFeatures = true,
+            autoreload = true,
+          },
+          procMacro = {
+            enable = true,
+          },
+        },
+      },
     })
-
 
     lspconfig["clangd"].setup({
       capabilities = capabilities,
