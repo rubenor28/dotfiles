@@ -1,26 +1,27 @@
-[colors.bright]
-black = "0x181a1c"
-blue = "0x72cce8"
-cyan = "0x5eefc1"
-green = "0x8dd274"
-magenta = "0xba9cf3"
-red = "0xff6578"
-white = "0xe1e3e4"
-yellow = "0xeacb64"
-
-[colors.normal]
-black = "0x181a1c"
-blue = "0x72cce8"
-cyan = "0x5eefc1"
-green = "0x8dd274"
-magenta = "0xba9cf3"
-red = "0xff6578"
-white = "0xe1e3e4"
-yellow = "0xeacb64"
-
+# Colors
 [colors.primary]
 background = "0x2a2f38"
 foreground = "0xe1e3e4"
+
+[colors.bright]
+black = "0x16161e"
+red = "0xf7768e"
+green = "0x41a6b5"
+yellow = "0xff9e64"
+blue = "0x3d59a1"
+magenta = "0x9d7cd8"
+cyan = "0x7dcfff"
+white = "0xc0caf5"
+
+[colors.normal]
+black = "0x414868"
+red = "0xdb4b4b"
+green = "0x73daca"
+yellow = "0xe0af68"
+blue = "0x7aa2f7"
+magenta = "0xbb9af7"
+cyan = "0x458588"
+white = "0x414868"
 
 [font]
 size = 14
@@ -36,7 +37,7 @@ family = "Caskaydia Cove Nerd Font"
 style = "Regular"
 
 [window]
-opacity = 0.95
+opacity = 1
 
 [window.padding]
 x = 6
