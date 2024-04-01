@@ -185,5 +185,14 @@ return {
       on_attach = on_attach,
     })
 
+    -- Requires omnisharp-roslyn
+    local pid = vim.fn.getpid()
+    local omnisharp_server_location = "/bin/OmniSharp"
+    lspconfig['omnisharp'].setup({
+        cmd = { omnisharp_server_location, "--languageserver" , "--hostPID", tostring(pid) },
+        on_attach = on_attach,
+        capabilities = capabilities,
+    })
+
   end,
 }

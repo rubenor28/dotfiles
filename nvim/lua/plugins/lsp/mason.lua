@@ -53,6 +53,7 @@ return {
         -- "eslint_d", -- js linter
         "yaml-language-server",
         "bash-language-server",
+        "csharp-language-server", -- Requires omnisharp-roslyn
       },
     })
   end,

@@ -1,5 +1,6 @@
 return {
   "rcarriga/nvim-notify",
+  lazy = true,
   config = function()
     local notify = require "notify"
     -- this for transparency
