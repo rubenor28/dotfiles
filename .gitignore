@@ -1,0 +1,7 @@
+# ignore everityhing
+*
+!.gitignore
+
+# Files of dotfiles
+!.config
+!.zshrc

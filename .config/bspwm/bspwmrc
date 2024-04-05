@@ -49,5 +49,5 @@ $HOME/.config/polybar/launch.sh &
 wmname compiz & # Fix for some java apps
 
 #For left handed mouse and touchpad with xinput
-#xinput set-prop $(xinput | grep -i "usb optical mouse" | awk -F'id=' '{print $2}' | awk '{print $1}') 'libinput Left Handed Enabled' 1 &
-#xinput set-prop $(xinput | grep -i "etps/2 elantech touchpad" | awk -F'id=' '{print $2}' | awk '{print $1}') 'libinput Left Handed Enabled' 1 &
+xinput set-prop $(xinput | grep -i "usb optical mouse" | awk -F'id=' '{print $2}' | awk '{print $1}') 'libinput Left Handed Enabled' 1 &
+xinput set-prop $(xinput | grep -i "SynPS/2 Synaptics TouchPad " | awk -F'id=' '{print $2}' | awk '{print $1}') 'libinput Left Handed Enabled' 1 &
