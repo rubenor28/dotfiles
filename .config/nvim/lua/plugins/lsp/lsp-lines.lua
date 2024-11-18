@@ -1,5 +1,5 @@
-return {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    lazy = false,
-    config = true,
-}
+-- return {
+--	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+--	lazy = false,
+--	config = true,
+--}

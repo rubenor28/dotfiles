@@ -1,32 +1,51 @@
 return {
-    "nvim-tree/nvim-tree.lua",
-    lazy = false,
-    config = function()
-        -- disable netrw at the very start of your init.lua
-        vim.g.loaded_netrw = 1
-        vim.g.loaded_netrwPlugin = 1
-        
-        -- optionally enable 24-bit colour
-        vim.opt.termguicolors = true
-        
-        -- empty setup using defaults
-        require("nvim-tree").setup()
-        
-        -- OR setup with some options
-        require("nvim-tree").setup({
-          sort = {
-            sorter = "case_sensitive",
-          },
-          view = {
-            width = 30,
-          },
-          renderer = {
-            group_empty = true,
-          },
-          filters = {
-            dotfiles = true,
-          },
-        })
-        vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-    end
+	"nvim-tree/nvim-tree.lua",
+	dependencies = "nvim-tree/nvim-web-devicons",
+	config = function()
+		local nvimtree = require("nvim-tree")
+
+		-- recommended settings for nvim-tree documentation
+		vim.g.loaded_netrw = 1
+		vim.g.loaded_netrePlugin = 1
+
+		nvimtree.setup({
+			view = {
+				-- width = 35,
+				relativenumber = false,
+			},
+			-- change folder arrow icons
+			renderer = {
+				indent_markers = {
+					enable = true,
+				},
+				icons = {
+					glyphs = {
+						folder = {
+							arrow_closed = "",
+							arrow_open = "",
+						},
+					},
+				},
+			},
+			actions = {
+				open_file = {
+					window_picker = {
+						enable = false,
+					},
+				},
+			},
+			filters = {
+				custom = { ".DS_Store" },
+			},
+			git = {
+				ignore = false,
+			},
+		})
+
+		local keymap = vim.keymap
+		keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>")
+		keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>")
+		keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>")
+		keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>")
+	end,
 }
