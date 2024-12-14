@@ -1,2 +1,2 @@
-require("core")
-require("config.lazy")
+require("rubenor.core")
+require("rubenor.lazy")
