@@ -55,7 +55,7 @@ return {
 				"clang-format", -- php formatter
 				"php-cs-fixer", -- Agregado para PHP
 				"phpstan", -- Análisis estático para PHP
-				"ltex-ls",
+				-- "ltex-ls", -- Escritura en ingles
 			},
 		})
 	end,

@@ -23,6 +23,7 @@ return {
 				java = { "jdtls" },
 				c = { "clangd" },
 				cpp = { "clang-format" },
+				csharp = { "clang-format" },
 				rust = { "rust_analyzer" },
 			},
 			format_on_save = {

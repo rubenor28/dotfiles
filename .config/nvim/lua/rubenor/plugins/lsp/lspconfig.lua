@@ -211,6 +211,24 @@ return {
 					},
 				})
 			end,
+
+			["omnisharp"] = function()
+				-- Configura omnisharp y especifica la ruta del binario
+				lspconfig["omnisharp"].setup({
+					capabilities = capabilities,
+					cmd = { "/usr/bin/omnisharp" }, -- Ruta al binario de omnisharp
+					on_attach = function(client, bufnr)
+						-- Aquí puedes agregar configuraciones específicas de attach
+					end,
+					settings = {
+						omnisharp = {
+							enableRoslynAnalyzers = true,
+							organizeImports = true,
+							enableEditorConfigSupport = true,
+						},
+					},
+				})
+			end,
 		})
 	end,
 }
