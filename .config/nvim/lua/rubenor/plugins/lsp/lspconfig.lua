@@ -169,12 +169,12 @@ return {
 				})
 			end,
 
-			["rust-analyzer"] = function()
+			["rust_analyzer"] = function()
 				-- configure rust-analyzer (Rust)
-				lspconfig["rust-analyzer"].setup({
+				lspconfig["rust_analyzer"].setup({
 					capabilities = capabilities,
 					settings = {
-						["rust-analyzer"] = {
+						["rust_analyzer"] = {
 							assist = { -- Asistir con el autocompletado
 								importGranularity = "crate",
 							},
