@@ -141,20 +141,6 @@ return {
 				})
 			end,
 
-			["intelephense"] = function()
-				-- configure intelephense (PHP)
-				lspconfig["intelephense"].setup({
-					capabilities = capabilities,
-					settings = {
-						intelephense = {
-							files = {
-								maxSize = 5000000, -- Máximo tamaño de archivo en bytes
-							},
-						},
-					},
-				})
-			end,
-
 			["pyright"] = function()
 				-- configure pyright (Python)
 				lspconfig["pyright"].setup({
@@ -262,6 +248,25 @@ return {
 							enableEditorConfigSupport = true,
 						},
 					},
+				})
+			end,
+
+			["phpstan"] = function()
+				lspconfig["phpstan"].setup({
+					capabilities = capabilities,
+					cmd = { "phpstan-language-server" }, -- Asegúrate de tener esto en tu PATH
+					settings = {
+						phpstan = {
+							level = 8, -- Nivel máximo de análisis
+							phpVersion = 80400, -- 8.4.0 en formato numérico (8*10000 + 4*100 + 0)
+							analyse = "wholeProject", -- Análisis completo del proyecto
+							memoryLimit = "2G", -- Ajusta según necesidades
+							checkMissingIterableValueType = false,
+						},
+					},
+					on_attach = function(client, bufnr)
+						-- Configuraciones específicas para PHP si son necesarias
+					end,
 				})
 			end,
 		})

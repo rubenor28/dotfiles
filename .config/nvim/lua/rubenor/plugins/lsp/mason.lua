@@ -40,7 +40,7 @@ return {
 				"jdtls",
 				"rust_analyzer",
 				"clangd",
-				"phpactor", -- Agregado para PHP
+				"phpactor", -- o "phpactor"
 			},
 		})
 
@@ -53,9 +53,8 @@ return {
 				"pylint",
 				"eslint_d",
 				"clang-format", -- php formatter
-				"php-cs-fixer", -- Agregado para PHP
-				"phpstan", -- Análisis estático para PHP
-				-- "ltex-ls", -- Escritura en ingles
+				"ltex-ls", -- Escritura en ingles
+				"php-cs-fixer",
 			},
 		})
 	end,

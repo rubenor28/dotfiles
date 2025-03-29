@@ -25,6 +25,21 @@ return {
 				cpp = { "clang-format" },
 				csharp = { "clang-format" },
 				rust = { "rust_analyzer" },
+				php = { "php_cs_fixer" },
+			},
+			formatters = {
+				php_cs_fixer = {
+					command = "php-cs-fixer",
+					args = {
+						"fix",
+						"--quiet",
+						"--allow-risky=yes", -- Permite reglas "riesgosas"
+						"-",
+					},
+					env = {
+						PHP_CS_FIXER_IGNORE_ENV = "true",
+					},
+				},
 			},
 			format_on_save = {
 				lsp_fallback = true,
