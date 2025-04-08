@@ -1,6 +1,35 @@
 scan_timeout = 60
 add_newline = false
 
+format = """\
+($directory)\
+$os\
+$git_branch\
+$git_status\
+$fill\
+$nodejs\
+$rust\
+$golang\
+$php\
+$bun\
+$java\
+$c\
+$conda\
+$zig\
+$status\
+$cmd_duration\
+$time\
+\n$character
+"""
+
+[fill]
+symbol = ' '
+
+# Configuración del símbolo del prompt
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+
 [line_break]
 disabled = false
 
@@ -22,6 +51,10 @@ map_symbol = true
 
 [git_branch]
 format = "[$symbol$branch]($style) "
+symbol = " "                           # Branch with oriental touch
+
+[git_status]
+format = '[$all_status$ahead_behind ]($style)'
 
 [package]
 format = "[$symbol$version]($style) "
@@ -64,7 +97,8 @@ disabled = true
 [localip]
 disabled = false
 ssh_only = false
-format = '[$localipv4](bold cyan) '
+format = '[$localipv4]($style) '
+style = 'bold cyan'
 
 [username]
 disabled = false
