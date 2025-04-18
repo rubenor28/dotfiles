@@ -1,0 +1,122 @@
+{
+    //applets
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+     },
+
+    //Reloj
+    "clock": {
+        "interval": 1,
+        "format": "  {:%H:%M}", // 24H
+        "format-alt": "  { %Y, %d %B, %A}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    // Uso del CPU
+    "cpu": {
+        "format": "{usage}% 󰍛",
+        "interval": 1,
+        "min-length": 5,
+        "format-alt-click": "click",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+        "format-icons": [
+            "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
+        ],
+        "on-click-right": "gnome-system-monitor",
+    },
+
+    // Uso de Memoria RAM
+    "memory": {
+        "format": "{}% "
+    },
+
+    // Temperatura
+    "temperature": {
+        "interval": 10,
+        "tooltip": true,
+        "hwmon-path": [
+            "/sys/class/hwmon/hwmon1/temp1_input",
+            "/sys/class/thermal/thermal_zone0/temp"
+        ],
+        "critical-threshold": 82,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            "󰈸"
+        ],
+        "on-click-right": "kitty --title nvtop sh -c 'nvtop'"
+    },
+     
+    // Brillo
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    
+    // Porcentaje de pila
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "interval" :1,
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    // Nivel de Volumen
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    // internet
+    "network": {
+        //"interval": 5,
+        "format": "{icon} {essid} {signalStrength}%",
+        // "format-wifi": "{icon} {essid} {signalStrength}%",
+        // "format-ethernet": "󰌘 {ifname}",
+        "format-wifi": "{icon}  {essid} {signalStrength}%",
+        "format-ethernet": "󰌘 {ifname} - {ifname}",
+        "format-disconnected": "󰌙 No conectado",
+        "tooltip-format": "IP: {ipaddr}",
+        "format-alt": "{ipaddr}/{cidr}",
+        "on-click-right": "notify-send 'Dirección IP' \"$(ip -4 addr show | grep -oP '(?<=inet\\s)\\d+(\\.\\d+){3}')\"",
+        "min-length": 24,
+        "max-length": 24,
+        "format-icons": [
+            "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+        ]
+    }
+}
