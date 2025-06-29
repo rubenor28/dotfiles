@@ -2,8 +2,6 @@ return {
 	"rebelot/kanagawa.nvim",
 	priority = 1000,
 	config = function()
-		local transparent = false -- set to true if you would like to enable transparency
-
 		require("kanagawa").setup({
 			compile = false, -- enable compiling the colorscheme
 			undercurl = true, -- enable undercurls
@@ -19,9 +17,6 @@ return {
 				palette = {},
 				theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
 			},
-			overrides = function(colors) -- add/modify highlights
-				return {}
-			end,
 			theme = "wave", -- Load "wave" theme when 'background' option is not set
 			background = { -- map the value of 'background' option to a theme
 				dark = "wave", -- try "dragon" !
@@ -29,6 +24,6 @@ return {
 			},
 		})
 
-		-- vim.cmd("colorscheme kanagawa")
+		vim.cmd("colorscheme kanagawa")
 	end,
 }

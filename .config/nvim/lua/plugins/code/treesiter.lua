@@ -11,6 +11,7 @@ return {
 
     -- configure treesitter
     treesitter.setup({ -- enable syntax highlighting
+      auto_install = true,
       highlight = {
         enable = true,
       },
@@ -45,6 +46,7 @@ return {
         "c",
         "sql",
         "php",
+        "blade",
         "java",
         "rust",
       },

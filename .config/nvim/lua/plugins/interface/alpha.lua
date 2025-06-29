@@ -20,10 +20,9 @@ return {
     -- Set menu
     dashboard.section.buttons.val = {
       -- dashboard.button("e", "  > New File", "<cmd>ene<CR>"),
-      dashboard.button("SPC ee", "  > Abrir/Cerrar explorador de archivos", "<cmd>NvimTreeToggle<CR>"),
+      dashboard.button("SPC ee", "  > Abrir/Cerrar explorador de archivos", "<cmd>Oil<CR>"),
       dashboard.button("SPC ff", "󰱼  > Buscar archivo", "<cmd>Telescope find_files<CR>"),
       dashboard.button("SPC fs", "  > Buscar palabra", "<cmd>Telescope live_grep<CR>"),
-      dashboard.button("SPC wr", "󰁯  > Restaurar sesión en dir actual", "<cmd>SessionRestore<CR>"),
       dashboard.button("SPC q", "  > Salir de NVIM", "<cmd>qa<CR>"),
     }
 
