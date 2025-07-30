@@ -18,6 +18,7 @@ return {
 		local lspconfig = require("lspconfig")
 		local mason_lspconfig = require("mason-lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+		local k = vim.keymap
 
 		-- 1. Capacidades base de Neovim
 		local base_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -40,6 +41,15 @@ return {
 			},
 		})
 
+
+		k.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Ir a la definicion" })
+		k.set("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Ir a las declaraciones" })
+		k.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Ir a las referencias" })
+
+		local on_attach = function(client)
+			print("[LSP] Attached to", client.name)
+		end
+
 		mason_lspconfig.setup({
 			ensure_installed = {
 				"ts_ls",
@@ -52,18 +62,22 @@ return {
 				"clangd",
 				"intelephense",
 				"phpactor",
+				"kotlin_language_server",
+        "emmet_ls",
 			},
 			automatic_installation = true,
 			handlers = {
 				function(server_name)
 					lspconfig[server_name].setup({
 						capabilities = capabilities,
+						on_attach = on_attach,
 					})
 				end,
 
 				["lua_ls"] = function()
 					lspconfig.lua_ls.setup({
 						capabilities = capabilities,
+						on_attach = on_attach,
 						settings = {
 							Lua = {
 								runtime = { version = "LuaJIT" },
@@ -112,6 +126,7 @@ return {
 							},
 						},
 						on_attach = function(client, bufnr)
+							on_attach(client, bufnr)
 							-- Análisis estricto para archivos individuales
 							vim.api.nvim_create_autocmd("BufWritePost", {
 								buffer = bufnr,
@@ -137,12 +152,43 @@ return {
 							},
 						},
 						on_attach = function(client, bufnr)
+							on_attach(client, bufnr)
 							-- Configurar para que muestre todos los errores posibles
 							vim.api.nvim_buf_set_option(bufnr, "phpcs_standard", "PSR12")
 							vim.api.nvim_buf_set_option(bufnr, "phpcs_severity", 1)
 						end,
 					})
 				end,
+
+				["kotlin_language_server"] = function()
+					lspconfig.kotlin_language_server.setup({
+						capabilities = capabilities,
+						on_attach = on_attach,
+						cmd = { "kotlin-language-server" },
+						filetypes = { "kotlin", "kts" },
+						root_dir = require("lspconfig.util").root_pattern(
+							"settings.gradle",
+							"settings.gradle.kts",
+							"build.gradle",
+							"build.gradle.kts",
+							".git"
+						),
+						init_options = {
+							compilerOptions = {
+								jvm = { target = "11" },
+							},
+						},
+					})
+				end,
+
+      ["emmet_ls"] = function()
+        -- configure emmet language server
+        lspconfig["emmet_ls"].setup({
+          capabilities = capabilities,
+          filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+        })
+      end,
+
 			},
 		})
 	end,

@@ -1,0 +1,30 @@
+return {
+-- 	"code-biscuits/nvim-biscuits",
+-- 	dependencies = {
+-- 		"nvim-treesitter/nvim-treesitter",
+-- 		run = ":TSUpdate",
+-- 	},
+-- 	config = function()
+-- 		require("nvim-biscuits").setup({
+-- 			default_config = {
+-- 				max_length = 12,
+-- 				min_distance = 5,
+-- 				prefix_string = " 📎 ",
+-- 			},
+-- 			language_config = {
+-- 				html = {
+-- 					prefix_string = " 🌐 ",
+-- 				},
+-- 				javascript = {
+-- 					prefix_string = " ✨ ",
+-- 				},
+-- 				python = {
+-- 					disabled = true,
+-- 				},
+--         rust = {
+-- 					prefix_string = " 🦀 ",
+--         }
+-- 			},
+-- 		})
+-- 	end,
+}

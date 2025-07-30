@@ -23,6 +23,7 @@ return {
         "stylua",
         "eslint_d",
         "clang-format",
+        "ruff",
 
         -- PHP Tools
         "intelephense",       -- LSP principal

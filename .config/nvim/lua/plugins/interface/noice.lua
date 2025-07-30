@@ -7,6 +7,8 @@ return {
 		"rcarriga/nvim-notify",
 	},
 	config = function()
+    local k = vim.keymap;
+
 		require("noice").setup({
 			cmdline = {
 				enabled = true, -- enables the Noice cmdline UI
@@ -34,5 +36,7 @@ return {
 				lsp_doc_border = false, -- add a border to hover docs and signature help
 			},
 		})
+
+    k.set("n", "<leader>nx", "<cmd>Noice dismiss<CR>", {desc = "Descartar notificaciones Noice"})
 	end,
 }

@@ -33,3 +33,7 @@ k.set("n", "<S-TAB>", "<cmd>tabp<CR>", { desc = "Pestaña anterior" })
 k.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Archivo actual en nueva pestaña" })
 
 k.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Mostrar diagnosticos" })
+
+-- k.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Ir a la definicion" })
+-- k.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Ir a las declaraciones" })
+-- k.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Ir a las referencias" })
