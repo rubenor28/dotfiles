@@ -47,27 +47,39 @@ setopt hist_verify            # show command with history expansion to user befo
 # force zsh to show the complete history
 alias history="history 0"
 
-# Alias
-# alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias renombrar="~/workspace/renombrar_canciones_rust/target/release/renombrar_canciones_rust"
-alias ll='lsd -lh --group-dirs=first'
-alias la='lsd -a --group-dirs=first'
-alias l='lsd --group-dirs=first'
-alias ls='lsd --group-dirs=first'
-alias lla='lsd -lha --group-dirs=first'
+alias ll='eza -lh --icons --group-directories-first'
+alias la='eza -a --icons --group-directories-first'
+alias l='eza --icons --group-directories-first'
+alias ls='eza --icons --group-directories-first'
+alias lla='eza -lha --icons --group-directories-first'
+alias tree="eza -T --icons --group-directories-first"
+
 alias cat='bat --style=plain --paging=never'
+
+alias cd='z'
+
 alias grep="grep --color=auto"
-alias tree="exa -T --icons"
+alias v='nvim'
 
 alias gs='git status -s'
+alias ga='git add'
+alias gc='git commit'
+alias gcm='git commit -m '
+alias gl='git log --oneline'
+alias gp='git push'
 
 alias zr='source ~/.zshrc'
 
-alias dnf='dnf5'
+eval "$(zoxide init zsh)"
 
-alias vm-on='systemctl start libvirtd.service'
-alias xg='startx ~/.config/X11/bspwm'
-alias v='nvim'
+# bun completions
+[ -s "/home/rubenor/.bun/_bun" ] && source "/home/rubenor/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.dotnet/tools"
 
 # Plugins
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -76,6 +88,5 @@ source ~/.zsh/sudo/sudo.plugin.zsh
 
 # Starfish prompteval 
 eval "$(starship init zsh)"
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -41,7 +41,6 @@ return {
 			},
 		})
 
-
 		k.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Ir a la definicion" })
 		k.set("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Ir a las declaraciones" })
 		k.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Ir a las referencias" })
@@ -63,7 +62,7 @@ return {
 				"intelephense",
 				"phpactor",
 				"kotlin_language_server",
-        "emmet_ls",
+				"emmet_ls",
 			},
 			automatic_installation = true,
 			handlers = {
@@ -160,35 +159,22 @@ return {
 					})
 				end,
 
-				["kotlin_language_server"] = function()
-					lspconfig.kotlin_language_server.setup({
+				["emmet_ls"] = function()
+					-- configure emmet language server
+					lspconfig["emmet_ls"].setup({
 						capabilities = capabilities,
-						on_attach = on_attach,
-						cmd = { "kotlin-language-server" },
-						filetypes = { "kotlin", "kts" },
-						root_dir = require("lspconfig.util").root_pattern(
-							"settings.gradle",
-							"settings.gradle.kts",
-							"build.gradle",
-							"build.gradle.kts",
-							".git"
-						),
-						init_options = {
-							compilerOptions = {
-								jvm = { target = "11" },
-							},
+						filetypes = {
+							"html",
+							"typescriptreact",
+							"javascriptreact",
+							"css",
+							"sass",
+							"scss",
+							"less",
+							"svelte",
 						},
 					})
 				end,
-
-      ["emmet_ls"] = function()
-        -- configure emmet language server
-        lspconfig["emmet_ls"].setup({
-          capabilities = capabilities,
-          filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-        })
-      end,
-
 			},
 		})
 	end,

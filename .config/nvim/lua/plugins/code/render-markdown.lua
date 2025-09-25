@@ -17,5 +17,10 @@ return {
 			right_pad = 1,
 			highlight = "render-markdownBullet",
 		},
+		-- For avante
+		opts = {
+			file_types = { "markdown", "Avante" },
+		},
+		ft = { "markdown", "Avante" },
 	},
 }

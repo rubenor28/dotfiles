@@ -14,6 +14,7 @@ return {
     "saadparwaiz1/cmp_luasnip", -- integración snippets con cmp
     "rafamadriz/friendly-snippets", -- snippets útiles
     "onsails/lspkind.nvim", -- pictogramas estilo vs-code
+    "mfussenegger/nvim-jdtls", -- Integración con java
   },
   config = function()
     local cmp = require("cmp")
