@@ -11,7 +11,7 @@ easyeffects \
 ttf-ms-fonts \
 ttf-wps-fonts \
 wps-office \
-kitty \
+alacritty \
 firefox \
 firefox-ublock-origin \
 firefox-noscript \
