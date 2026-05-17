@@ -26,3 +26,17 @@ alias zr='source ~/.config/fish/config.fish'
 fnm env --use-on-cd --shell fish | source
 zoxide init fish | source
 starship init fish | source
+
+# pnpm
+set -gx PNPM_HOME "/home/rubenor/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+
+if status is-interactive
+    and command -v tmux >/dev/null
+    and not set -q TMUX
+    
+    exec tmux new-session -A -s main
+end
