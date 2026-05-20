@@ -64,7 +64,6 @@ require("mason").setup({
 require("mason-tool-installer").setup({
 	ensure_installed = {
 		-- Herramientas, linters y formateadores
-		"tree-sitter-cli",
 		"prettier",
 		"stylua",
 		"google-java-format",
