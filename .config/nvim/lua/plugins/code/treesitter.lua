@@ -1,11 +1,10 @@
 vim.pack.add({
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/romus204/tree-sitter-manager.nvim" },
 })
 
-require("tree-sitter-manager").setup({
-	auto_install = true,
-	highlight = true,
-	ensure_installed = {
+require("nvim-treesitter")
+	.install({
 		"c_sharp",
 		"razor",
 		"json",
@@ -28,5 +27,10 @@ require("tree-sitter-manager").setup({
 		"c",
 		"sql",
 		"svelte",
-	},
+	})
+	:wait(300000)
+
+require("tree-sitter-manager").setup({
+	auto_install = true,
+	highlight = true,
 })
