@@ -1,6 +1,12 @@
 #!/bin/bash
+echo "============================================================"
+echo "[Script] Eliminado power profiles"
+echo "============================================================"
 sudo pacman -Rns power-profiles-daemon
 
+echo "============================================================"
+echo "[Script] Instalando extensiones gnome, apps, y utilidades"
+echo "============================================================"
 # Instalar paquetes
 paru -Syu \
 gnome-shell-extension-blur-my-shell \
@@ -8,6 +14,8 @@ gnome-shell-extension-hidetopbar-git \
 gnome-shell-extension-just-perfection-desktop \
 gnome-shell-extension-space-bar-git \
 gnome-shell-extension-dash-to-dock \
+gnome-shell-extension-appindicator \
+wl-clipboard \
 easyeffects \
 audacious \
 ttf-cascadia-code-nerd \
@@ -30,7 +38,9 @@ cachyos-snapper-support \
 btrfs-assistant \
 tlp \
 tlp-rdw \
+tlp-pd \
 tlpui \
+syncthing \
 git \
 git-delta \
 base-devel \
@@ -60,15 +70,37 @@ cmake \
 --needed
 
 # Configurar boton de log out gnome
+echo "============================================================"
+echo "[Script] Configurando logout de gnome"
+echo "============================================================"
 gsettings set org.gnome.shell always-show-log-out true
 
+echo "============================================================"
+echo "[Script] Descargando tmux TPM"
+echo "============================================================"
 # Instalar tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+echo "============================================================"
+echo "[Script] Configurando NodeJS"
+echo "============================================================"
 # Instalar node y pnpm
 fnm install 24
 fnm use 24
 npm i -g pnpm
 
+echo "============================================================"
+echo "[Script] Configurando Rust"
+echo "============================================================"
 # Instalar y configurar rust
 rustup default stable
+
+echo "============================================================"
+echo "[Script] Habilitando tlp"
+echo "============================================================"
+sudo systemctl enable --now tlp
+
+echo "============================================================"
+echo "[Script] Habilitando syncthing"
+echo "============================================================"
+sudo systemctl enable --now syncthing@$USER
