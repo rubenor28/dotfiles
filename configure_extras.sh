@@ -2,7 +2,7 @@
 echo "============================================================"
 echo "[Script] Eliminado power profiles"
 echo "============================================================"
-sudo pacman -Rns power-profiles-daemon
+sudo pacman -Rns power-profiles-daemon firefox
 
 echo "============================================================"
 echo "[Script] Instalando extensiones gnome, apps, y utilidades"
@@ -16,15 +16,16 @@ gnome-shell-extension-space-bar-git \
 gnome-shell-extension-dash-to-dock \
 gnome-shell-extension-appindicator \
 wl-clipboard \
-easyeffects \
+audiosource \
 audacious \
 ttf-cascadia-code-nerd \
 ttf-ms-fonts \
 ttf-wps-fonts \
-wps-office \
+onlyoffice-bin \
+libreoffice-fresh \
+stirling-pdf-desktop \
 alacritty \
-firefox \
-firefox-ublock-origin \
+brave-origin-bin \
 fish \
 eza \
 bat \
@@ -34,7 +35,6 @@ yazi \
 fzf \
 snapper \
 snap-pac \
-cachyos-snapper-support \
 btrfs-assistant \
 tlp \
 tlp-rdw \
@@ -56,6 +56,8 @@ dotnet-sdk-bin \
 dotnet-runtime-bin \
 aspnet-runtime-bin \
 jdk-openjdk \
+maven \
+netbeans \
 dbeaver \
 mariadb \
 postgresql \
