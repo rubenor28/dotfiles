@@ -14,6 +14,7 @@ vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Dividir la pantalla vertic
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Dividir la pantalla horizontalmente" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Dimensionar equitativamente las divisiones" })
 vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Cerrar la division actual" })
+vim.keymap.set("n", "<leader>st", "<cmd>term<CR>", { desc = "Abrir terminal en pestaña actual" })
 
 -- Tabs
 vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Nueva pestaña" })

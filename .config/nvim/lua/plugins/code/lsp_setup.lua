@@ -1,5 +1,4 @@
 vim.pack.add({
-	{ src = "https://github.com/stevearc/dressing.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/folke/lazydev.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
@@ -12,8 +11,6 @@ require("lazydev").setup({
 		{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 	},
 })
-
-pcall(require, "dressing")
 
 vim.diagnostic.config({
 	float = { border = "rounded", source = "always" },
@@ -97,6 +94,7 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"taplo",
 		"lemminx",
+		"ts_ls",
 	},
 	automatic_installation = true,
 })

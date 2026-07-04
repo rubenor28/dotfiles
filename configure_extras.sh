@@ -2,11 +2,13 @@
 echo "============================================================"
 echo "[Script] Eliminado power profiles"
 echo "============================================================"
-sudo pacman -Rns power-profiles-daemon firefox
+sudo pacman -Rns power-profiles-daemon
 
 echo "============================================================"
 echo "[Script] Instalando extensiones gnome, apps, y utilidades"
 echo "============================================================"
+sudo pacman -Syu paru --needed -y
+
 # Instalar paquetes
 paru -Syu \
 gnome-shell-extension-blur-my-shell \
@@ -17,7 +19,7 @@ gnome-shell-extension-dash-to-dock \
 gnome-shell-extension-appindicator \
 wl-clipboard \
 audiosource \
-audacious \
+nokkvi-bin \
 ttf-cascadia-code-nerd \
 ttf-ms-fonts \
 ttf-wps-fonts \
@@ -69,7 +71,13 @@ dia-git \
 obsidian \
 filezilla \
 cmake \
---needed
+--needed -y
+
+# Configurar boton de log out gnome
+echo "============================================================"
+echo "[Script] Configurando fish como shell por defecto (cerrar sesión para ver efecto)"
+echo "============================================================"
+chsh -s /usr/bin/fish
 
 # Configurar boton de log out gnome
 echo "============================================================"
