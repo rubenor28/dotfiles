@@ -29,6 +29,7 @@ stirling-pdf-desktop \
 alacritty \
 brave-origin-bin \
 fish \
+ufw \
 eza \
 bat \
 zoxide \
@@ -72,6 +73,16 @@ obsidian \
 filezilla \
 cmake \
 --needed -y
+
+echo "============================================================"
+echo "[Script] Configurando ufw"
+echo "============================================================"
+sudo systemctl enable --now iptables
+sudo systemctl enable --now ufw
+sudo ufw default deny
+sudo ufw allow from 192.168.1.0/24
+sudo ufw allow Deluge
+sudo ufw limit ssh
 
 # Configurar boton de log out gnome
 echo "============================================================"
