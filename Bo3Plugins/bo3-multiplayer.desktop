@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=BO3: Multiplayer (Clean Ops)
+Comment=Lanza BO3 con Clean Ops inyectado
+Exec=/path/to/bo3_manager.sh --multiplayer
+Icon=steam_icon_311210
+Terminal=false
+Type=Application
+Categories=Game;

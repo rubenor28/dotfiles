@@ -11,12 +11,6 @@ sudo pacman -Syu paru --needed -y
 
 # Instalar paquetes
 paru -Syu \
-gnome-shell-extension-blur-my-shell \
-gnome-shell-extension-hidetopbar-git \
-gnome-shell-extension-just-perfection-desktop \
-gnome-shell-extension-space-bar-git \
-gnome-shell-extension-dash-to-dock \
-gnome-shell-extension-appindicator \
 wl-clipboard \
 audiosource \
 nokkvi-bin \

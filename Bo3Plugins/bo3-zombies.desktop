@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=BO3: Zombies (T7 Patch)
+Comment=Lanza BO3 con T7 Patch inyectado
+Exec=/path/to/bo3_manager.sh --zombies
+Icon=/path/to/bo3-zombies-icon.ico
+Terminal=false
+Type=Application
+Categories=Game;
