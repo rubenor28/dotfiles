@@ -261,10 +261,10 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface accent-color 'red'
 
 # Modo claro
-gsettings set org.gnome.desktop.background picture-uri "file://$HOME/Pictures/wallpaper.jpeg"
+gsettings set org.gnome.desktop.background picture-uri "file://$HOME/Pictures/wallpaper2.jpeg"
 
 # Modo oscuro (GNOME 42+)
-gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/Pictures/wallpaper.jpeg"
+gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/Pictures/wallpaper2.jpeg"
 
 # 8. Activar extensiones
 # gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
