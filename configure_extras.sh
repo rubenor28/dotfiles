@@ -4,6 +4,7 @@ echo "============================================================"
 echo "[Script] Instalando extensiones gnome, apps, y utilidades"
 echo "============================================================"
 sudo pacman -Syu paru --needed -y
+sudo pacman -Rns alacritty
 
 # Instalar paquetes
 paru -Syu \
@@ -21,6 +22,7 @@ libreoffice-fresh \
 stirling-pdf-desktop \
 brave-origin-bin \
 fish \
+kitty \
 ufw \
 eza \
 bat \
@@ -265,8 +267,8 @@ gsettings set org.gnome.desktop.background picture-uri "file://$HOME/Pictures/wa
 gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/Pictures/wallpaper.jpeg"
 
 # 8. Activar extensiones
-gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
-gnome-extensions enable blur-my-shell@aunetx
+# gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
+# gnome-extensions enable blur-my-shell@aunetx
 
 
 
@@ -311,3 +313,8 @@ echo "Restaurando estructura de carpetas de GNOME..."
 dconf load /org/gnome/desktop/app-folders/ < "$CONFIG_FILE"
 
 echo "[OK] Carpetas de aplicaciones restauradas con éxito."
+
+
+echo "============================================================"
+echo "[Script] Completado. Reiniciando sistema..."
+echo "============================================================"
