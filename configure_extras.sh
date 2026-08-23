@@ -63,6 +63,7 @@ cmake \
 cachyos-gaming-meta \
 steam \
 heroic-games-launcher \
+prismlauncher \
 --needed -y
 
 # Ruta relativa del script
