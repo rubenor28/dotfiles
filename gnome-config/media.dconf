@@ -1,0 +1,16 @@
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+screensaver=['<Alt>l']
+volume-down=['<Alt>F1']
+volume-up=['<Alt>F2']
+www=['<Super>b']
+
+[custom-keybindings/custom0]
+binding='<Super>Return'
+command='kitty'
+name='terminal'
+
+[custom-keybindings/custom1]
+binding=''
+command='krunner'
+name='app launcher'

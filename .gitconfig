@@ -1,16 +1,18 @@
 [core]
-  pager = delta
+    pager = delta
+	editor = nvim
+	autocrlf = input
 
 [interactive]
-  diffFilter = delta --color-only
+    diffFilter = delta --color-only
 
 [delta]
-  navigate = true # use n and N to move between diff sections
+    navigate = true # use n and N to move between diff sections
   # dark = true
   # light = true
 
 [merge]
-  conflictstyle = diff3
+    conflictstyle = diff3
 
 [diff]
-  colorMoved = default
+    colorMoved = default
